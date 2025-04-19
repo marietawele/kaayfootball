@@ -1,0 +1,174 @@
+<div class="modal-header" data-bs-theme="ligth">
+        <h1 class="modal-title fs-5">Modifier terrain</h1>
+        <button type="button" class="btn-close" aria-label ="Close" (click)="activeModal.close()"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="reactiveForm_edit_terrain" (ngSubmit)="onSubmit_edit_terrain()" #form_edit_terrain="ngForm" class="row">
+        
+<!-- Champs Id Entreprise avec un contrôle de validité : clé étrangère liée à la colonne id_entreprise de la table entreprise -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Entreprise</label >
+              <select [ngClass]="{ 'is-invalid': submitted && f.id_entreprise.errors }" class="form-select" formControlName="id_entreprise">
+                <option value="">Sélectionnez un(e) Entreprise</option>
+                @for (one_entreprise of form_details?.les_entreprises; track $index) {
+                  <option [value]="one_entreprise.id_entreprise">
+                    {{"Entreprise N°" + one_entreprise.id_entreprise}}
+                  </option>
+                }
+              </select>
+              @if (submitted && f.id_entreprise.errors) {
+                <div class="invalid-feedback">
+                  @if (f.id_entreprise.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Champs Id Utilisateur avec un contrôle de validité : clé étrangère liée à la colonne id_utilisateur de la table utilisateur -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Utilisateur</label >
+              <select [ngClass]="{ 'is-invalid': submitted && f.id_utilisateur.errors }" class="form-select" formControlName="id_utilisateur">
+                <option value="">Sélectionnez un(e) Utilisateur</option>
+                @for (one_utilisateur of form_details?.les_utilisateurs; track $index) {
+                  <option [value]="one_utilisateur.id_utilisateur">
+                    {{"Utilisateur N°" + one_utilisateur.id_utilisateur}}
+                  </option>
+                }
+              </select>
+              @if (submitted && f.id_utilisateur.errors) {
+                <div class="invalid-feedback">
+                  @if (f.id_utilisateur.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Libelle Terrain field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Libelle Terrain</label >
+              <input class="form-control" type="text" formControlName="libelle_terrain" placeholder="Libelle Terrain" [ngClass]="{ 'is-invalid': submitted && f.libelle_terrain.errors }"/>
+              @if (submitted && f.libelle_terrain.errors) {
+                <div class="invalid-feedback">
+                  @if (f.libelle_terrain.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Adresse field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Adresse</label >
+              <input class="form-control" type="text" formControlName="adresse" placeholder="Adresse" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }"/>
+              @if (submitted && f.adresse.errors) {
+                <div class="invalid-feedback">
+                  @if (f.adresse.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Description field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Description</label >
+              <input class="form-control" type="text" formControlName="description" placeholder="Description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"/>
+              @if (submitted && f.description.errors) {
+                <div class="invalid-feedback">
+                  @if (f.description.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Prix Par Heure field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Prix Par Heure</label >
+              <input class="form-control" type="text" formControlName="prix_par_heure" placeholder="Prix Par Heure" [ngClass]="{ 'is-invalid': submitted && f.prix_par_heure.errors }"/>
+              @if (submitted && f.prix_par_heure.errors) {
+                <div class="invalid-feedback">
+                  @if (f.prix_par_heure.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Image field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Image</label >
+              <input class="form-control" type="text" formControlName="image" placeholder="Image" [ngClass]="{ 'is-invalid': submitted && f.image.errors }"/>
+              @if (submitted && f.image.errors) {
+                <div class="invalid-feedback">
+                  @if (f.image.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Longueur field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Longueur</label >
+              <input class="form-control" type="text" formControlName="longueur" placeholder="Longueur" [ngClass]="{ 'is-invalid': submitted && f.longueur.errors }"/>
+              @if (submitted && f.longueur.errors) {
+                <div class="invalid-feedback">
+                  @if (f.longueur.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Largeur field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Largeur</label >
+              <input class="form-control" type="text" formControlName="largeur" placeholder="Largeur" [ngClass]="{ 'is-invalid': submitted && f.largeur.errors }"/>
+              @if (submitted && f.largeur.errors) {
+                <div class="invalid-feedback">
+                  @if (f.largeur.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Etat field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Etat</label >
+              <input class="form-control" type="text" formControlName="etat" placeholder="Etat" [ngClass]="{ 'is-invalid': submitted && f.etat.errors }"/>
+              @if (submitted && f.etat.errors) {
+                <div class="invalid-feedback">
+                  @if (f.etat.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Created At field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Created At</label >
+              <input class="form-control" type="text" formControlName="created_at" placeholder="Created At" [ngClass]="{ 'is-invalid': submitted && f.created_at.errors }"/>
+              @if (submitted && f.created_at.errors) {
+                <div class="invalid-feedback">
+                  @if (f.created_at.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+<!-- Updated At field avec un contrôle de validité -->
+            <div class="form-group col-sm-6">
+              <label class="mb-2" >Updated At</label >
+              <input class="form-control" type="text" formControlName="updated_at" placeholder="Updated At" [ngClass]="{ 'is-invalid': submitted && f.updated_at.errors }"/>
+              @if (submitted && f.updated_at.errors) {
+                <div class="invalid-feedback">
+                  @if (f.updated_at.errors.required) {
+                    <div>Ce champ est obligatoire</div>
+                  }
+                </div>
+              }
+            </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary m-2" [disabled]="loading_edit_terrain ||
+      loading_get_details_edit_terrain_form" (click)="form_edit_terrain.ngSubmit.emit()">
+          {{ loading_edit_terrain ? "En cours ..." : "Valider" }}
+      </button>
+      <button type="button" class="btn btn-outline-danger" (click)="activeModal.close()">Fermer</button>
+    </div>

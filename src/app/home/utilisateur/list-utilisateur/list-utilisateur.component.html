@@ -1,0 +1,43 @@
+<!-- entete -->
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="fs-1">Utilisateur  - {{les_utilisateurs.length}}</div>
+    <div class="d-flex">
+      <button class="btn btn-primary" (click)="openModal_add_utilisateur()">Ajouter Utilisateur</button>
+    </div>
+  </div>
+  <!-- Liste des éléments -->
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id_utilisateur</th>
+<th scope="col">id_entreprise</th>
+<th scope="col">nom</th>
+<th scope="col">prenom</th>
+<th scope="col">login</th>
+<th scope="col">password</th>
+<th scope="col">etat</th>
+<th scope="col">created_at</th>
+<th scope="col">updated_at</th><th scope="col">actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (one_utilisateur of les_utilisateurs; track one_utilisateur) {
+          <tr>
+            <td>{{one_utilisateur.id_utilisateur}}</td>
+<td>{{one_utilisateur.id_entreprise}}</td>
+<td>{{one_utilisateur.nom}}</td>
+<td>{{one_utilisateur.prenom}}</td>
+<td>{{one_utilisateur.login}}</td>
+<td>{{one_utilisateur.password}}</td>
+<td>{{one_utilisateur.etat}}</td>
+<td>{{one_utilisateur.created_at}}</td>
+<td>{{one_utilisateur.updated_at}}</td><td>
+    <i style="cursor: pointer;" class="bi bi-pencil-square me-2" (click)="openModal_edit_utilisateur(one_utilisateur)"></i>
+    <i style="cursor: pointer;" class="bi bi-trash" (click)="delete_utilisateur(one_utilisateur)"></i>
+</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>

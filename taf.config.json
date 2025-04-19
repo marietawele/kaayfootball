@@ -1,1 +1,3122 @@
-{"projectName":"projet1.angular","decription":"Fichier de configuration de Taf","taf_base_url":"http://localhost/kaayfootball/","les_modules":[{"module":"home","les_tables":[{"table":"abonnement","description":["id_abonnement","id_entreprise","id_utilisateur","id_type_abonnement","libelle_abonnement","date_debut","date_fin","etat","created_at","updated_at","reduction"],"table_descriptions":{"table_name":"abonnement","cle_primaire":{"Field":"id_abonnement","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["abonnement","entreprise","utilisateur","type_abonnement"],"les_referenced_table":["entreprise","utilisateur","type_abonnement"],"les_colonnes":[{"Field":"id_abonnement","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"abonnement","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":false,"referenced_table":{"table_name":"entreprise","cle_primaire":{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["abonnement","entreprise"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_entreprise","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"adresse","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"telephone","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"email","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"image","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"site_web","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"ninea","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"registre_de_commerce","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"pays","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""}]}},{"Field":"id_utilisateur","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_utilisateur de la table utilisateur","table":{"TABLE_NAME":"abonnement","COLUMN_NAME":"id_utilisateur","REFERENCED_TABLE_NAME":"utilisateur","REFERENCED_COLUMN_NAME":"id_utilisateur"},"table_existant":false,"referenced_table":{"table_name":"utilisateur","cle_primaire":{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["abonnement","entreprise","utilisateur","privilege"],"les_referenced_table":["privilege"],"les_colonnes":[{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":true},{"Field":"id_privilege","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_privilege de la table privilege","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_privilege","REFERENCED_TABLE_NAME":"privilege","REFERENCED_COLUMN_NAME":"id_privilege"},"table_existant":false,"referenced_table":{"table_name":"privilege","cle_primaire":{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["abonnement","entreprise","utilisateur","privilege"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_privilege","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"YES","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"nom","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"prenom","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"login","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"password","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"id_type_abonnement","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_type_abonnement de la table type_abonnement","table":{"TABLE_NAME":"abonnement","COLUMN_NAME":"id_type_abonnement","REFERENCED_TABLE_NAME":"type_abonnement","REFERENCED_COLUMN_NAME":"id_type_abonnement"},"table_existant":false,"referenced_table":{"table_name":"type_abonnement","cle_primaire":{"Field":"id_type_abonnement","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["abonnement","entreprise","utilisateur","type_abonnement"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_type_abonnement","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_type_abonnement","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"libelle_abonnement","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"date_debut","Type":"datetime","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"date_fin","Type":"datetime","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"reduction","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""}]},"les_types":["add","edit","list","details"]},{"table":"entreprise","description":["id_entreprise","libelle_entreprise","adresse","telephone","email","image","site_web","ninea","registre_de_commerce","pays","created_at","updated_at","etat"],"table_descriptions":{"table_name":"entreprise","cle_primaire":{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["entreprise"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_entreprise","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"adresse","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"telephone","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"email","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"image","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"site_web","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"ninea","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"registre_de_commerce","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"pays","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""}]},"les_types":["add","edit","list","details"]},{"table":"log","description":["id_log","id_utilisateur","action","ip","created_at","updated_at"],"table_descriptions":{"table_name":"log","cle_primaire":{"Field":"id_log","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["log","utilisateur"],"les_referenced_table":["utilisateur"],"les_colonnes":[{"Field":"id_log","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_utilisateur","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_utilisateur de la table utilisateur","table":{"TABLE_NAME":"log","COLUMN_NAME":"id_utilisateur","REFERENCED_TABLE_NAME":"utilisateur","REFERENCED_COLUMN_NAME":"id_utilisateur"},"table_existant":false,"referenced_table":{"table_name":"utilisateur","cle_primaire":{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["log","utilisateur","entreprise","privilege"],"les_referenced_table":["entreprise","privilege"],"les_colonnes":[{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":false,"referenced_table":{"table_name":"entreprise","cle_primaire":{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["log","utilisateur","entreprise"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_entreprise","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"adresse","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"telephone","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"email","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"image","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"site_web","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"ninea","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"registre_de_commerce","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"pays","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""}]}},{"Field":"id_privilege","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_privilege de la table privilege","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_privilege","REFERENCED_TABLE_NAME":"privilege","REFERENCED_COLUMN_NAME":"id_privilege"},"table_existant":false,"referenced_table":{"table_name":"privilege","cle_primaire":{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["log","utilisateur","entreprise","privilege"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_privilege","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"YES","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"nom","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"prenom","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"login","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"password","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"action","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"ip","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]},"les_types":["add","edit","list","details"]},{"table":"privilege","description":["id_privilege","libelle_privilege","description","etat","created_at","updated_at"],"table_descriptions":{"table_name":"privilege","cle_primaire":{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["privilege"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_privilege","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"YES","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]},"les_types":["add","edit","list","details"]},{"table":"reservation","description":["id_reservation","id_entreprise","id_utilisateur","id_terrain","id_type_reservation","libelle_reservation","date","heure_debut","heure_fin","evaluation","etat","created_at","updated_at","statut"],"table_descriptions":{"table_name":"reservation","cle_primaire":{"Field":"id_reservation","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["reservation","entreprise","utilisateur","terrain","type_reservation"],"les_referenced_table":["entreprise","utilisateur","terrain","type_reservation"],"les_colonnes":[{"Field":"id_reservation","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"reservation","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":false,"referenced_table":{"table_name":"entreprise","cle_primaire":{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["reservation","entreprise"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_entreprise","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"adresse","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"telephone","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"email","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"image","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"site_web","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"ninea","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"registre_de_commerce","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"pays","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""}]}},{"Field":"id_utilisateur","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_utilisateur de la table utilisateur","table":{"TABLE_NAME":"reservation","COLUMN_NAME":"id_utilisateur","REFERENCED_TABLE_NAME":"utilisateur","REFERENCED_COLUMN_NAME":"id_utilisateur"},"table_existant":false,"referenced_table":{"table_name":"utilisateur","cle_primaire":{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["reservation","entreprise","utilisateur","privilege"],"les_referenced_table":["privilege"],"les_colonnes":[{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":true},{"Field":"id_privilege","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_privilege de la table privilege","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_privilege","REFERENCED_TABLE_NAME":"privilege","REFERENCED_COLUMN_NAME":"id_privilege"},"table_existant":false,"referenced_table":{"table_name":"privilege","cle_primaire":{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["reservation","entreprise","utilisateur","privilege"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_privilege","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"YES","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"nom","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"prenom","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"login","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"password","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"id_terrain","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_terrain de la table terrain","table":{"TABLE_NAME":"reservation","COLUMN_NAME":"id_terrain","REFERENCED_TABLE_NAME":"terrain","REFERENCED_COLUMN_NAME":"id_terrain"},"table_existant":false,"referenced_table":{"table_name":"terrain","cle_primaire":{"Field":"id_terrain","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["reservation","entreprise","utilisateur","terrain"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_terrain","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"terrain","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":true},{"Field":"id_utilisateur","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_utilisateur de la table utilisateur","table":{"TABLE_NAME":"terrain","COLUMN_NAME":"id_utilisateur","REFERENCED_TABLE_NAME":"utilisateur","REFERENCED_COLUMN_NAME":"id_utilisateur"},"table_existant":true},{"Field":"libelle_terrain","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"adresse","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"prix_par_heure","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"image","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"longueur","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"largeur","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"id_type_reservation","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_type_reservation de la table type_reservation","table":{"TABLE_NAME":"reservation","COLUMN_NAME":"id_type_reservation","REFERENCED_TABLE_NAME":"type_reservation","REFERENCED_COLUMN_NAME":"id_type_reservation"},"table_existant":false,"referenced_table":{"table_name":"type_reservation","cle_primaire":{"Field":"id_type_reservation","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["reservation","entreprise","utilisateur","terrain","type_reservation"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_type_reservation","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_type_reservation","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"libelle_reservation","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"date","Type":"datetime","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"heure_debut","Type":"timestamp","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"heure_fin","Type":"timestamp","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"evaluation","Type":"int(1)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"text","Null":"NO","Key":"","Default":"'actif'","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"statut","Type":"enum('Reservé','Annulée','Expirée','')","Null":"YES","Key":"","Default":null,"Extra":"","explications":""}]},"les_types":["add","edit","list","details"]},{"table":"terrain","description":["id_terrain","id_entreprise","id_utilisateur","libelle_terrain","adresse","description","prix_par_heure","image","longueur","largeur","etat","created_at","updated_at"],"table_descriptions":{"table_name":"terrain","cle_primaire":{"Field":"id_terrain","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["terrain","entreprise","utilisateur"],"les_referenced_table":["entreprise","utilisateur"],"les_colonnes":[{"Field":"id_terrain","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"terrain","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":false,"referenced_table":{"table_name":"entreprise","cle_primaire":{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["terrain","entreprise"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_entreprise","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"adresse","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"telephone","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"email","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"image","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"site_web","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"ninea","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"registre_de_commerce","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"pays","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""}]}},{"Field":"id_utilisateur","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_utilisateur de la table utilisateur","table":{"TABLE_NAME":"terrain","COLUMN_NAME":"id_utilisateur","REFERENCED_TABLE_NAME":"utilisateur","REFERENCED_COLUMN_NAME":"id_utilisateur"},"table_existant":false,"referenced_table":{"table_name":"utilisateur","cle_primaire":{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["terrain","entreprise","utilisateur","privilege"],"les_referenced_table":["privilege"],"les_colonnes":[{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":true},{"Field":"id_privilege","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_privilege de la table privilege","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_privilege","REFERENCED_TABLE_NAME":"privilege","REFERENCED_COLUMN_NAME":"id_privilege"},"table_existant":false,"referenced_table":{"table_name":"privilege","cle_primaire":{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["terrain","entreprise","utilisateur","privilege"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_privilege","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"YES","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"nom","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"prenom","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"login","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"password","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"libelle_terrain","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"adresse","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"prix_par_heure","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"image","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"longueur","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"largeur","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]},"les_types":["add","edit","list","details"]},{"table":"type_abonnement","description":["id_type_abonnement","libelle_type_abonnement","description","etat","created_at","updated_at"],"table_descriptions":{"table_name":"type_abonnement","cle_primaire":{"Field":"id_type_abonnement","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["type_abonnement"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_type_abonnement","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_type_abonnement","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]},"les_types":["add","edit","list","details"]},{"table":"type_reservation","description":["id_type_reservation","libelle_type_reservation","description","etat","created_at","updated_at"],"table_descriptions":{"table_name":"type_reservation","cle_primaire":{"Field":"id_type_reservation","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["type_reservation"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_type_reservation","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_type_reservation","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]},"les_types":["add","edit","list","details"]},{"table":"utilisateur","description":["id_utilisateur","id_entreprise","id_privilege","nom","prenom","login","password","etat","created_at","updated_at"],"table_descriptions":{"table_name":"utilisateur","cle_primaire":{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["utilisateur","entreprise","privilege"],"les_referenced_table":["entreprise","privilege"],"les_colonnes":[{"Field":"id_utilisateur","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"id_entreprise","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_entreprise de la table entreprise","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_entreprise","REFERENCED_TABLE_NAME":"entreprise","REFERENCED_COLUMN_NAME":"id_entreprise"},"table_existant":false,"referenced_table":{"table_name":"entreprise","cle_primaire":{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["utilisateur","entreprise"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_entreprise","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_entreprise","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"adresse","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"telephone","Type":"varchar(100)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"email","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"image","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"site_web","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"ninea","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"registre_de_commerce","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"pays","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""}]}},{"Field":"id_privilege","Type":"int(11)","Null":"YES","Key":"MUL","Default":null,"Extra":"","explications":"clé étrangère liée à la colonne id_privilege de la table privilege","table":{"TABLE_NAME":"utilisateur","COLUMN_NAME":"id_privilege","REFERENCED_TABLE_NAME":"privilege","REFERENCED_COLUMN_NAME":"id_privilege"},"table_existant":false,"referenced_table":{"table_name":"privilege","cle_primaire":{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},"les_based_table_name":["utilisateur","entreprise","privilege"],"les_referenced_table":[],"les_colonnes":[{"Field":"id_privilege","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment","explications":"clé primaire"},{"Field":"libelle_privilege","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"description","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"YES","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]}},{"Field":"nom","Type":"varchar(155)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"prenom","Type":"int(11)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"login","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"password","Type":"text","Null":"YES","Key":"","Default":null,"Extra":"","explications":""},{"Field":"etat","Type":"varchar(15)","Null":"NO","Key":"","Default":"actif","Extra":"","explications":""},{"Field":"created_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""},{"Field":"updated_at","Type":"datetime","Null":"NO","Key":"","Default":"current_timestamp()","Extra":"","explications":""}]},"les_types":["add","edit","list","details"]}]},{"module":"public","les_tables":[{"table":"login","description":["login","pwd"],"les_types":["login"]}]}]}
+{
+  "projectName": "projet1.angular",
+  "decription": "Fichier de configuration de Taf",
+  "taf_base_url": "http://localhost/kaayfootball/",
+  "les_modules": [
+    {
+      "module": "home",
+      "les_tables": [
+        {
+          "table": "abonnement",
+          "description": [
+            "id_abonnement",
+            "id_entreprise",
+            "id_utilisateur",
+            "id_type_abonnement",
+            "libelle_abonnement",
+            "date_debut",
+            "date_fin",
+            "etat",
+            "created_at",
+            "updated_at",
+            "reduction"
+          ],
+          "table_descriptions": {
+            "table_name": "abonnement",
+            "cle_primaire": {
+              "Field": "id_abonnement",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": [
+              "abonnement",
+              "entreprise",
+              "utilisateur",
+              "type_abonnement"
+            ],
+            "les_referenced_table": [
+              "entreprise",
+              "utilisateur",
+              "type_abonnement"
+            ],
+            "les_colonnes": [
+              {
+                "Field": "id_abonnement",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "id_entreprise",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                "table": {
+                  "TABLE_NAME": "abonnement",
+                  "COLUMN_NAME": "id_entreprise",
+                  "REFERENCED_TABLE_NAME": "entreprise",
+                  "REFERENCED_COLUMN_NAME": "id_entreprise"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "entreprise",
+                  "cle_primaire": {
+                    "Field": "id_entreprise",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": ["abonnement", "entreprise"],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "libelle_entreprise",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "adresse",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "telephone",
+                      "Type": "varchar(100)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "email",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "image",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "site_web",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "ninea",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "registre_de_commerce",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "pays",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "id_utilisateur",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_utilisateur de la table utilisateur",
+                "table": {
+                  "TABLE_NAME": "abonnement",
+                  "COLUMN_NAME": "id_utilisateur",
+                  "REFERENCED_TABLE_NAME": "utilisateur",
+                  "REFERENCED_COLUMN_NAME": "id_utilisateur"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "utilisateur",
+                  "cle_primaire": {
+                    "Field": "id_utilisateur",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "abonnement",
+                    "entreprise",
+                    "utilisateur"
+                  ],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_utilisateur",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "MUL",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                      "table": {
+                        "TABLE_NAME": "utilisateur",
+                        "COLUMN_NAME": "id_entreprise",
+                        "REFERENCED_TABLE_NAME": "entreprise",
+                        "REFERENCED_COLUMN_NAME": "id_entreprise"
+                      },
+                      "table_existant": true
+                    },
+                    {
+                      "Field": "nom",
+                      "Type": "varchar(155)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "prenom",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "login",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "password",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "id_type_abonnement",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_type_abonnement de la table type_abonnement",
+                "table": {
+                  "TABLE_NAME": "abonnement",
+                  "COLUMN_NAME": "id_type_abonnement",
+                  "REFERENCED_TABLE_NAME": "type_abonnement",
+                  "REFERENCED_COLUMN_NAME": "id_type_abonnement"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "type_abonnement",
+                  "cle_primaire": {
+                    "Field": "id_type_abonnement",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "abonnement",
+                    "entreprise",
+                    "utilisateur",
+                    "type_abonnement"
+                  ],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_type_abonnement",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "libelle_type_abonnement",
+                      "Type": "varchar(100)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "description",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "libelle_abonnement",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "date_debut",
+                "Type": "datetime",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "date_fin",
+                "Type": "datetime",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "etat",
+                "Type": "varchar(15)",
+                "Null": "NO",
+                "Key": "",
+                "Default": "actif",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "reduction",
+                "Type": "varchar(100)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "entreprise",
+          "description": [
+            "id_entreprise",
+            "libelle_entreprise",
+            "adresse",
+            "telephone",
+            "email",
+            "image",
+            "site_web",
+            "ninea",
+            "registre_de_commerce",
+            "pays",
+            "created_at",
+            "updated_at",
+            "etat"
+          ],
+          "table_descriptions": {
+            "table_name": "entreprise",
+            "cle_primaire": {
+              "Field": "id_entreprise",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": ["entreprise"],
+            "les_referenced_table": [],
+            "les_colonnes": [
+              {
+                "Field": "id_entreprise",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "libelle_entreprise",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "adresse",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "telephone",
+                "Type": "varchar(100)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "email",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "image",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "site_web",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "ninea",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "registre_de_commerce",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "pays",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "etat",
+                "Type": "varchar(15)",
+                "Null": "NO",
+                "Key": "",
+                "Default": "actif",
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "log",
+          "description": [
+            "id_log",
+            "id_utilisateur",
+            "action",
+            "ip",
+            "created_at",
+            "updated_at"
+          ],
+          "table_descriptions": {
+            "table_name": "log",
+            "cle_primaire": {
+              "Field": "id_log",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": ["log", "utilisateur"],
+            "les_referenced_table": ["utilisateur"],
+            "les_colonnes": [
+              {
+                "Field": "id_log",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "id_utilisateur",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_utilisateur de la table utilisateur",
+                "table": {
+                  "TABLE_NAME": "log",
+                  "COLUMN_NAME": "id_utilisateur",
+                  "REFERENCED_TABLE_NAME": "utilisateur",
+                  "REFERENCED_COLUMN_NAME": "id_utilisateur"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "utilisateur",
+                  "cle_primaire": {
+                    "Field": "id_utilisateur",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": ["log", "utilisateur", "entreprise"],
+                  "les_referenced_table": ["entreprise"],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_utilisateur",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "MUL",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                      "table": {
+                        "TABLE_NAME": "utilisateur",
+                        "COLUMN_NAME": "id_entreprise",
+                        "REFERENCED_TABLE_NAME": "entreprise",
+                        "REFERENCED_COLUMN_NAME": "id_entreprise"
+                      },
+                      "table_existant": false,
+                      "referenced_table": {
+                        "table_name": "entreprise",
+                        "cle_primaire": {
+                          "Field": "id_entreprise",
+                          "Type": "int(11)",
+                          "Null": "NO",
+                          "Key": "PRI",
+                          "Default": null,
+                          "Extra": "auto_increment",
+                          "explications": "clé primaire"
+                        },
+                        "les_based_table_name": [
+                          "log",
+                          "utilisateur",
+                          "entreprise"
+                        ],
+                        "les_referenced_table": [],
+                        "les_colonnes": [
+                          {
+                            "Field": "id_entreprise",
+                            "Type": "int(11)",
+                            "Null": "NO",
+                            "Key": "PRI",
+                            "Default": null,
+                            "Extra": "auto_increment",
+                            "explications": "clé primaire"
+                          },
+                          {
+                            "Field": "libelle_entreprise",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "adresse",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "telephone",
+                            "Type": "varchar(100)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "email",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "image",
+                            "Type": "text",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "site_web",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "ninea",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "registre_de_commerce",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "pays",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "created_at",
+                            "Type": "datetime",
+                            "Null": "NO",
+                            "Key": "",
+                            "Default": "current_timestamp()",
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "updated_at",
+                            "Type": "datetime",
+                            "Null": "NO",
+                            "Key": "",
+                            "Default": "current_timestamp()",
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "etat",
+                            "Type": "varchar(15)",
+                            "Null": "NO",
+                            "Key": "",
+                            "Default": "actif",
+                            "Extra": "",
+                            "explications": ""
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Field": "nom",
+                      "Type": "varchar(155)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "prenom",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "login",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "password",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "action",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "ip",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "privilege",
+          "description": [
+            "id_privilege",
+            "libelle_privilege",
+            "description",
+            "etat",
+            "created_at",
+            "updated_at"
+          ],
+          "table_descriptions": {
+            "table_name": "privilege",
+            "cle_primaire": {
+              "Field": "id_privilege",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": ["privilege"],
+            "les_referenced_table": [],
+            "les_colonnes": [
+              {
+                "Field": "id_privilege",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "libelle_privilege",
+                "Type": "varchar(155)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "description",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "etat",
+                "Type": "varchar(15)",
+                "Null": "YES",
+                "Key": "",
+                "Default": "actif",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "reservation",
+          "description": [
+            "id_reservation",
+            "id_entreprise",
+            "id_utilisateur",
+            "id_terrain",
+            "id_type_reservation",
+            "libelle_reservation",
+            "date",
+            "heure_debut",
+            "heure_fin",
+            "evaluation",
+            "etat",
+            "created_at",
+            "updated_at",
+            "statut"
+          ],
+          "table_descriptions": {
+            "table_name": "reservation",
+            "cle_primaire": {
+              "Field": "id_reservation",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": [
+              "reservation",
+              "entreprise",
+              "utilisateur",
+              "terrain",
+              "type_reservation"
+            ],
+            "les_referenced_table": [
+              "entreprise",
+              "utilisateur",
+              "terrain",
+              "type_reservation"
+            ],
+            "les_colonnes": [
+              {
+                "Field": "id_reservation",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "id_entreprise",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                "table": {
+                  "TABLE_NAME": "reservation",
+                  "COLUMN_NAME": "id_entreprise",
+                  "REFERENCED_TABLE_NAME": "entreprise",
+                  "REFERENCED_COLUMN_NAME": "id_entreprise"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "entreprise",
+                  "cle_primaire": {
+                    "Field": "id_entreprise",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": ["reservation", "entreprise"],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "libelle_entreprise",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "adresse",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "telephone",
+                      "Type": "varchar(100)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "email",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "image",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "site_web",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "ninea",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "registre_de_commerce",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "pays",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "id_utilisateur",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_utilisateur de la table utilisateur",
+                "table": {
+                  "TABLE_NAME": "reservation",
+                  "COLUMN_NAME": "id_utilisateur",
+                  "REFERENCED_TABLE_NAME": "utilisateur",
+                  "REFERENCED_COLUMN_NAME": "id_utilisateur"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "utilisateur",
+                  "cle_primaire": {
+                    "Field": "id_utilisateur",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "reservation",
+                    "entreprise",
+                    "utilisateur"
+                  ],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_utilisateur",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "MUL",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                      "table": {
+                        "TABLE_NAME": "utilisateur",
+                        "COLUMN_NAME": "id_entreprise",
+                        "REFERENCED_TABLE_NAME": "entreprise",
+                        "REFERENCED_COLUMN_NAME": "id_entreprise"
+                      },
+                      "table_existant": true
+                    },
+                    {
+                      "Field": "nom",
+                      "Type": "varchar(155)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "prenom",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "login",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "password",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "id_terrain",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_terrain de la table terrain",
+                "table": {
+                  "TABLE_NAME": "reservation",
+                  "COLUMN_NAME": "id_terrain",
+                  "REFERENCED_TABLE_NAME": "terrain",
+                  "REFERENCED_COLUMN_NAME": "id_terrain"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "terrain",
+                  "cle_primaire": {
+                    "Field": "id_terrain",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "reservation",
+                    "entreprise",
+                    "utilisateur",
+                    "terrain"
+                  ],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_terrain",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "MUL",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                      "table": {
+                        "TABLE_NAME": "terrain",
+                        "COLUMN_NAME": "id_entreprise",
+                        "REFERENCED_TABLE_NAME": "entreprise",
+                        "REFERENCED_COLUMN_NAME": "id_entreprise"
+                      },
+                      "table_existant": true
+                    },
+                    {
+                      "Field": "id_utilisateur",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "MUL",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": "clé étrangère liée à la colonne id_utilisateur de la table utilisateur",
+                      "table": {
+                        "TABLE_NAME": "terrain",
+                        "COLUMN_NAME": "id_utilisateur",
+                        "REFERENCED_TABLE_NAME": "utilisateur",
+                        "REFERENCED_COLUMN_NAME": "id_utilisateur"
+                      },
+                      "table_existant": true
+                    },
+                    {
+                      "Field": "libelle_terrain",
+                      "Type": "varchar(155)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "adresse",
+                      "Type": "varchar(100)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "description",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "prix_par_heure",
+                      "Type": "varchar(155)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "image",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "longueur",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "largeur",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "id_type_reservation",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_type_reservation de la table type_reservation",
+                "table": {
+                  "TABLE_NAME": "reservation",
+                  "COLUMN_NAME": "id_type_reservation",
+                  "REFERENCED_TABLE_NAME": "type_reservation",
+                  "REFERENCED_COLUMN_NAME": "id_type_reservation"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "type_reservation",
+                  "cle_primaire": {
+                    "Field": "id_type_reservation",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "reservation",
+                    "entreprise",
+                    "utilisateur",
+                    "terrain",
+                    "type_reservation"
+                  ],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_type_reservation",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "libelle_type_reservation",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "description",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "libelle_reservation",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "date",
+                "Type": "datetime",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "heure_debut",
+                "Type": "timestamp",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "heure_fin",
+                "Type": "timestamp",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "evaluation",
+                "Type": "int(1)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "etat",
+                "Type": "text",
+                "Null": "NO",
+                "Key": "",
+                "Default": "'actif'",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "statut",
+                "Type": "enum('Reservé','Annulée','Expirée','')",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "terrain",
+          "description": [
+            "id_terrain",
+            "id_entreprise",
+            "id_utilisateur",
+            "libelle_terrain",
+            "adresse",
+            "description",
+            "prix_par_heure",
+            "image",
+            "longueur",
+            "largeur",
+            "etat",
+            "created_at",
+            "updated_at"
+          ],
+          "table_descriptions": {
+            "table_name": "terrain",
+            "cle_primaire": {
+              "Field": "id_terrain",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": ["terrain", "entreprise", "utilisateur"],
+            "les_referenced_table": ["entreprise", "utilisateur"],
+            "les_colonnes": [
+              {
+                "Field": "id_terrain",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "id_entreprise",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                "table": {
+                  "TABLE_NAME": "terrain",
+                  "COLUMN_NAME": "id_entreprise",
+                  "REFERENCED_TABLE_NAME": "entreprise",
+                  "REFERENCED_COLUMN_NAME": "id_entreprise"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "entreprise",
+                  "cle_primaire": {
+                    "Field": "id_entreprise",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": ["terrain", "entreprise"],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "libelle_entreprise",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "adresse",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "telephone",
+                      "Type": "varchar(100)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "email",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "image",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "site_web",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "ninea",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "registre_de_commerce",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "pays",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "id_utilisateur",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_utilisateur de la table utilisateur",
+                "table": {
+                  "TABLE_NAME": "terrain",
+                  "COLUMN_NAME": "id_utilisateur",
+                  "REFERENCED_TABLE_NAME": "utilisateur",
+                  "REFERENCED_COLUMN_NAME": "id_utilisateur"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "utilisateur",
+                  "cle_primaire": {
+                    "Field": "id_utilisateur",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "terrain",
+                    "entreprise",
+                    "utilisateur"
+                  ],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_utilisateur",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "MUL",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                      "table": {
+                        "TABLE_NAME": "utilisateur",
+                        "COLUMN_NAME": "id_entreprise",
+                        "REFERENCED_TABLE_NAME": "entreprise",
+                        "REFERENCED_COLUMN_NAME": "id_entreprise"
+                      },
+                      "table_existant": true
+                    },
+                    {
+                      "Field": "nom",
+                      "Type": "varchar(155)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "prenom",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "login",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "password",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "libelle_terrain",
+                "Type": "varchar(155)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "adresse",
+                "Type": "varchar(100)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "description",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "prix_par_heure",
+                "Type": "varchar(155)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "image",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "longueur",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "largeur",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "etat",
+                "Type": "varchar(15)",
+                "Null": "NO",
+                "Key": "",
+                "Default": "actif",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "type_abonnement",
+          "description": [
+            "id_type_abonnement",
+            "libelle_type_abonnement",
+            "description",
+            "etat",
+            "created_at",
+            "updated_at"
+          ],
+          "table_descriptions": {
+            "table_name": "type_abonnement",
+            "cle_primaire": {
+              "Field": "id_type_abonnement",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": ["type_abonnement"],
+            "les_referenced_table": [],
+            "les_colonnes": [
+              {
+                "Field": "id_type_abonnement",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "libelle_type_abonnement",
+                "Type": "varchar(100)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "description",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "etat",
+                "Type": "varchar(15)",
+                "Null": "NO",
+                "Key": "",
+                "Default": "actif",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "type_reservation",
+          "description": [
+            "id_type_reservation",
+            "libelle_type_reservation",
+            "description",
+            "etat",
+            "created_at",
+            "updated_at"
+          ],
+          "table_descriptions": {
+            "table_name": "type_reservation",
+            "cle_primaire": {
+              "Field": "id_type_reservation",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": ["type_reservation"],
+            "les_referenced_table": [],
+            "les_colonnes": [
+              {
+                "Field": "id_type_reservation",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "libelle_type_reservation",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "description",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "etat",
+                "Type": "varchar(15)",
+                "Null": "NO",
+                "Key": "",
+                "Default": "actif",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "utilisateur",
+          "description": [
+            "id_utilisateur",
+            "id_entreprise",
+            "nom",
+            "prenom",
+            "login",
+            "password",
+            "etat",
+            "created_at",
+            "updated_at"
+          ],
+          "table_descriptions": {
+            "table_name": "utilisateur",
+            "cle_primaire": {
+              "Field": "id_utilisateur",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": ["utilisateur", "entreprise"],
+            "les_referenced_table": ["entreprise"],
+            "les_colonnes": [
+              {
+                "Field": "id_utilisateur",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "id_entreprise",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                "table": {
+                  "TABLE_NAME": "utilisateur",
+                  "COLUMN_NAME": "id_entreprise",
+                  "REFERENCED_TABLE_NAME": "entreprise",
+                  "REFERENCED_COLUMN_NAME": "id_entreprise"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "entreprise",
+                  "cle_primaire": {
+                    "Field": "id_entreprise",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": ["utilisateur", "entreprise"],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "libelle_entreprise",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "adresse",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "telephone",
+                      "Type": "varchar(100)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "email",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "image",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "site_web",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "ninea",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "registre_de_commerce",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "pays",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "nom",
+                "Type": "varchar(155)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "prenom",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "login",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "password",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "etat",
+                "Type": "varchar(15)",
+                "Null": "NO",
+                "Key": "",
+                "Default": "actif",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        },
+        {
+          "table": "utilisateur_entreprise",
+          "description": [
+            "id_utilisateur_entreprise",
+            "id_utilisateur",
+            "id_entreprise",
+            "id_privilege",
+            "created_at",
+            "updated_at"
+          ],
+          "table_descriptions": {
+            "table_name": "utilisateur_entreprise",
+            "cle_primaire": {
+              "Field": "id_utilisateur_entreprise",
+              "Type": "int(11)",
+              "Null": "NO",
+              "Key": "PRI",
+              "Default": null,
+              "Extra": "auto_increment",
+              "explications": "clé primaire"
+            },
+            "les_based_table_name": [
+              "utilisateur_entreprise",
+              "utilisateur",
+              "entreprise",
+              "privilege"
+            ],
+            "les_referenced_table": ["utilisateur", "entreprise", "privilege"],
+            "les_colonnes": [
+              {
+                "Field": "id_utilisateur_entreprise",
+                "Type": "int(11)",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment",
+                "explications": "clé primaire"
+              },
+              {
+                "Field": "id_utilisateur",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_utilisateur de la table utilisateur",
+                "table": {
+                  "TABLE_NAME": "utilisateur_entreprise",
+                  "COLUMN_NAME": "id_utilisateur",
+                  "REFERENCED_TABLE_NAME": "utilisateur",
+                  "REFERENCED_COLUMN_NAME": "id_utilisateur"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "utilisateur",
+                  "cle_primaire": {
+                    "Field": "id_utilisateur",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "utilisateur_entreprise",
+                    "utilisateur",
+                    "entreprise"
+                  ],
+                  "les_referenced_table": ["entreprise"],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_utilisateur",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "MUL",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                      "table": {
+                        "TABLE_NAME": "utilisateur",
+                        "COLUMN_NAME": "id_entreprise",
+                        "REFERENCED_TABLE_NAME": "entreprise",
+                        "REFERENCED_COLUMN_NAME": "id_entreprise"
+                      },
+                      "table_existant": false,
+                      "referenced_table": {
+                        "table_name": "entreprise",
+                        "cle_primaire": {
+                          "Field": "id_entreprise",
+                          "Type": "int(11)",
+                          "Null": "NO",
+                          "Key": "PRI",
+                          "Default": null,
+                          "Extra": "auto_increment",
+                          "explications": "clé primaire"
+                        },
+                        "les_based_table_name": [
+                          "utilisateur_entreprise",
+                          "utilisateur",
+                          "entreprise"
+                        ],
+                        "les_referenced_table": [],
+                        "les_colonnes": [
+                          {
+                            "Field": "id_entreprise",
+                            "Type": "int(11)",
+                            "Null": "NO",
+                            "Key": "PRI",
+                            "Default": null,
+                            "Extra": "auto_increment",
+                            "explications": "clé primaire"
+                          },
+                          {
+                            "Field": "libelle_entreprise",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "adresse",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "telephone",
+                            "Type": "varchar(100)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "email",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "image",
+                            "Type": "text",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "site_web",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "ninea",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "registre_de_commerce",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "pays",
+                            "Type": "varchar(255)",
+                            "Null": "YES",
+                            "Key": "",
+                            "Default": null,
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "created_at",
+                            "Type": "datetime",
+                            "Null": "NO",
+                            "Key": "",
+                            "Default": "current_timestamp()",
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "updated_at",
+                            "Type": "datetime",
+                            "Null": "NO",
+                            "Key": "",
+                            "Default": "current_timestamp()",
+                            "Extra": "",
+                            "explications": ""
+                          },
+                          {
+                            "Field": "etat",
+                            "Type": "varchar(15)",
+                            "Null": "NO",
+                            "Key": "",
+                            "Default": "actif",
+                            "Extra": "",
+                            "explications": ""
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Field": "nom",
+                      "Type": "varchar(155)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "prenom",
+                      "Type": "int(11)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "login",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "password",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "id_entreprise",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_entreprise de la table entreprise",
+                "table": {
+                  "TABLE_NAME": "utilisateur_entreprise",
+                  "COLUMN_NAME": "id_entreprise",
+                  "REFERENCED_TABLE_NAME": "entreprise",
+                  "REFERENCED_COLUMN_NAME": "id_entreprise"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "entreprise",
+                  "cle_primaire": {
+                    "Field": "id_entreprise",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "utilisateur_entreprise",
+                    "utilisateur",
+                    "entreprise"
+                  ],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_entreprise",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "libelle_entreprise",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "adresse",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "telephone",
+                      "Type": "varchar(100)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "email",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "image",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "site_web",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "ninea",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "registre_de_commerce",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "pays",
+                      "Type": "varchar(255)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "id_privilege",
+                "Type": "int(11)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": "",
+                "explications": "clé étrangère liée à la colonne id_privilege de la table privilege",
+                "table": {
+                  "TABLE_NAME": "utilisateur_entreprise",
+                  "COLUMN_NAME": "id_privilege",
+                  "REFERENCED_TABLE_NAME": "privilege",
+                  "REFERENCED_COLUMN_NAME": "id_privilege"
+                },
+                "table_existant": false,
+                "referenced_table": {
+                  "table_name": "privilege",
+                  "cle_primaire": {
+                    "Field": "id_privilege",
+                    "Type": "int(11)",
+                    "Null": "NO",
+                    "Key": "PRI",
+                    "Default": null,
+                    "Extra": "auto_increment",
+                    "explications": "clé primaire"
+                  },
+                  "les_based_table_name": [
+                    "utilisateur_entreprise",
+                    "utilisateur",
+                    "entreprise",
+                    "privilege"
+                  ],
+                  "les_referenced_table": [],
+                  "les_colonnes": [
+                    {
+                      "Field": "id_privilege",
+                      "Type": "int(11)",
+                      "Null": "NO",
+                      "Key": "PRI",
+                      "Default": null,
+                      "Extra": "auto_increment",
+                      "explications": "clé primaire"
+                    },
+                    {
+                      "Field": "libelle_privilege",
+                      "Type": "varchar(155)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "description",
+                      "Type": "text",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": null,
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "etat",
+                      "Type": "varchar(15)",
+                      "Null": "YES",
+                      "Key": "",
+                      "Default": "actif",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "created_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    },
+                    {
+                      "Field": "updated_at",
+                      "Type": "datetime",
+                      "Null": "NO",
+                      "Key": "",
+                      "Default": "current_timestamp()",
+                      "Extra": "",
+                      "explications": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Field": "created_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              },
+              {
+                "Field": "updated_at",
+                "Type": "datetime",
+                "Null": "NO",
+                "Key": "",
+                "Default": "current_timestamp()",
+                "Extra": "",
+                "explications": ""
+              }
+            ]
+          },
+          "les_types": ["add", "edit", "list", "details"]
+        }
+      ]
+    },
+    {
+      "module": "public",
+      "les_tables": [
+        {
+          "table": "login",
+          "description": ["login", "pwd"],
+          "les_types": ["login"]
+        }
+      ]
+    }
+  ]
+}

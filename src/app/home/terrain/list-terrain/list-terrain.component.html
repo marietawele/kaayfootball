@@ -1,0 +1,51 @@
+<!-- entete -->
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="fs-1">Terrain  - {{les_terrains.length}}</div>
+    <div class="d-flex">
+      <button class="btn btn-primary" (click)="openModal_add_terrain()">Ajouter Terrain</button>
+    </div>
+  </div>
+  <!-- Liste des éléments -->
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id_terrain</th>
+<th scope="col">id_entreprise</th>
+<th scope="col">id_utilisateur</th>
+<th scope="col">libelle_terrain</th>
+<th scope="col">adresse</th>
+<th scope="col">description</th>
+<th scope="col">prix_par_heure</th>
+<th scope="col">image</th>
+<th scope="col">longueur</th>
+<th scope="col">largeur</th>
+<th scope="col">etat</th>
+<th scope="col">created_at</th>
+<th scope="col">updated_at</th><th scope="col">actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (one_terrain of les_terrains; track one_terrain) {
+          <tr>
+            <td>{{one_terrain.id_terrain}}</td>
+<td>{{one_terrain.id_entreprise}}</td>
+<td>{{one_terrain.id_utilisateur}}</td>
+<td>{{one_terrain.libelle_terrain}}</td>
+<td>{{one_terrain.adresse}}</td>
+<td>{{one_terrain.description}}</td>
+<td>{{one_terrain.prix_par_heure}}</td>
+<td>{{one_terrain.image}}</td>
+<td>{{one_terrain.longueur}}</td>
+<td>{{one_terrain.largeur}}</td>
+<td>{{one_terrain.etat}}</td>
+<td>{{one_terrain.created_at}}</td>
+<td>{{one_terrain.updated_at}}</td><td>
+    <i style="cursor: pointer;" class="bi bi-pencil-square me-2" (click)="openModal_edit_terrain(one_terrain)"></i>
+    <i style="cursor: pointer;" class="bi bi-trash" (click)="delete_terrain(one_terrain)"></i>
+</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
