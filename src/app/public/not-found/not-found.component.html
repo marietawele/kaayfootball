@@ -1,0 +1,24 @@
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner vh-100 align-items-center d-flex justify-content-center">
+            <!-- Register -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Logo -->
+                    <h1 class="text-center text-primary m-0">SCANFIELD</h1>
+                    <!-- /Logo -->
+                    <hr>
+                    <h4 class="m-4 text-center">Cette page est introuvable</h4>
+
+                    <p class="text-center">
+                        <button class="btn btn-primary me-3" (click)="go_back()">Retourner à la page précédente</button>
+                        <a [routerLink]="['/home']" class="text-secondary">
+                            <span>Retourner à la page d'accueil</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- /Register -->
+        </div>
+    </div>
+</div>

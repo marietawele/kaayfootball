@@ -1,37 +1,63 @@
-<div class="d-flex align-items-center vh-100">
-  <div class="container">
-    <form  [formGroup]="reactiveForm_login_login " (ngSubmit)="onSubmit_login_login ()" #form_login_login ="ngForm" class="row">
-      <!-- login field avec un control de validite -->
-    <div class="form-group col-sm-6">
-      <label class="mb-2"  >login</label >
-      <input class="form-control" type="text"  formControlName="login"  placeholder="login"  [ngClass]="{ 'is-invalid': submitted && f.login.errors }"/>
-      @if (submitted && f.login.errors) {
-        <div class="invalid-feedback">
-          @if (f.login.errors.required) {
-            <div>Ce champ est obligatoire</div>
-          }
+<div class="body">
+  <div class="card login-container mt-5 mb-5">
+    <div class="container d-flex justify-content-center">
+      <div class="login-box">
+        <div class="header  text-center">
+          <img style="width: 200px;" src="img/player.png" alt="KAAYFOOTBALL">
         </div>
-      }
-    </div>
-<!-- pwd field avec un control de validite -->
-    <div class="form-group col-sm-6">
-      <label class="mb-2"  >Password</label >
-      <input class="form-control" type="text"  formControlName="pwd"  placeholder="pwd"  [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }"/>
-      @if (submitted && f.pwd.errors) {
-        <div class="invalid-feedback">
-          @if (f.pwd.errors.required) {
-            <div>Ce champ est obligatoire</div>
-          }
+        <div class="form-box text-center">
+          <h2>Identifiez-vous</h2>
+          <p class="fs-6 small">Merci de renseigner vos informations de connexion</p>
         </div>
-      }
-    </div>
-    </form>
-    <!-- vous pouvez valider votre formulaire n'importe ou -->
 
-    <div class="text-center m-2">
-        <button type="button" class="btn btn-primary m-2" [disabled]="loading_login_login "
-            (click)="form_login_login .ngSubmit.emit()">{{loading_login_login ?"En cours ...":"Valider"}}</button>
-        <button class="btn btn-secondary m-2" type="reset" (click)="onReset_login_login ()">Vider</button>
-    </div>
+        <form [formGroup]="reactiveForm_login_login" (ngSubmit)="onSubmit_login_login()" #form_login_login="ngForm">
+          <!-- Champ Email -->
+          <div class="form-group">
+            <label class="">Email</label>
+            <input class="form-control" type="email" formControlName="login" placeholder="Votre adresse email"
+              [ngClass]="{ 'is-invalid': submitted && f.login.errors }" />
+            @if (submitted && f.login.errors) {
+            <div class="invalid-feedback">
+              @if (f.login.errors.required) {
+              <div class="error">Ce champ est obligatoire</div>
+              }
+            </div>
+            }
+          </div>
+
+          <!-- Champ Mot de passe avec icône -->
+          <div class="form-group">
+            <label>Mot de passe</label>
+            <div class="input-group">
+              <input class="form-control password-input" [type]="showPassword ? 'text' : 'password'"
+                formControlName="pwd" placeholder="*****************"
+                [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+              <button type="button" class="btn-toggle-password" (click)="togglePasswordVisibility()">
+                <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+              </button>
+            </div>
+            @if (submitted && f.pwd.errors) {
+            <div class="invalid-feedback">
+              @if (f.pwd.errors.required) {
+              <div class="error">Ce champ est obligatoire</div>
+              }
+            </div>
+            }
+          </div>
+
+          <!-- Bouton de connexion -->
+          <div class="button text-center">
+            <button type="submit" class="btn-login" [disabled]="loading_login_login">
+              {{ loading_login_login ? "En cours ..." : "Se Connecter" }}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Image -->
+      <!-- <div class="image-box">
+        <img src="img/balle2" alt="Footballeur"  />
+      </div>
+    </div> -->
   </div>
 </div>

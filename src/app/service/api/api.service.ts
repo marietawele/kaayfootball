@@ -6,7 +6,7 @@ import { IdbService } from '../idb/idb.service';
 import Swal from 'sweetalert2';
 import moment from 'moment';
 import 'moment/locale/fr';
-
+import { Location } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +21,8 @@ export class ApiService {
   current_entreprise: any = {}
   loading_get_utilisateur = false
   menu: any[] = []
+  color1 = "#1555A6"
+  color2 = "#D92010"
 
   full_menu: any[] = [
     {
@@ -488,7 +490,7 @@ export class ApiService {
     is_expired: null,
     date_expiration: null
   }
-  
+
   constructor(private http: HttpClient, private route: Router, private idb: IdbService, public location: Location) { }
   // sauvegardes
   async get_from_local_storage(key: string): Promise<any> {
@@ -561,7 +563,7 @@ export class ApiService {
   }
   async taf_post_login(path: string, data_to_send: any, on_success: Function, on_error: Function) {
     let api_url = this.taf_base_url + path;
-    
+
     this.http.post(api_url, data_to_send).subscribe(
       (reponse: any) => {// on success
         on_success(reponse)
@@ -623,7 +625,7 @@ export class ApiService {
     });
     return info
   }
-  
+
   format_date(date_string: string) {
     // console.log("date_string",date_string)
     return {
