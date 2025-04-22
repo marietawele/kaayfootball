@@ -1,0 +1,69 @@
+pipeline {
+    agent any
+
+    environment {
+        // Définir l'environnement de travail pour Node.js
+        NODE_HOME = '/usr/local/bin/node'
+        PATH = "${NODE_HOME}/bin:${env.PATH}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    // Récupérer le code depuis GitHub
+                    checkout scm
+                }
+            }
+        }
+        
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Installer les dépendances Angular
+                    sh 'npm install'
+                }
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                script {
+                    // Compiler le projet Angular
+                    sh 'ng build --prod'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    // Exécuter les tests
+                    sh 'ng test --watch=false --browsers=ChromeHeadless'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Déployer l'application (exemple avec un serveur de staging)
+                    sh 'scp -r dist/* user@staging-server:/path/to/your/app'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Actions après l'exécution du pipeline (ex: nettoyer les ressources)
+            cleanWs()
+        }
+        success {
+            echo 'Pipeline exécuté avec succès !'
+        }
+        failure {
+            echo 'Le pipeline a échoué.'
+        }
+    }
+}

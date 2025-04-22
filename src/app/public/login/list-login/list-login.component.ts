@@ -51,10 +51,11 @@ export class ListLoginComponent {
         this.api.taf_post_login("taf_auth/auth", login, async (reponse: any) => {
             if (reponse.status) {
                 console.log("Opération effectuée avec succés sur la table login. Réponse= ", reponse);
-                console.log("user_connected", this.api.token)
-                if (reponse.utilisateur.statut == 'actif') {
+
+                if (reponse.utilisateur.etat == "actif") {
                     await this.api.save_on_local_storage("token", reponse.data)
                     this.api.Swal_success("Opération éffectuée avec succés")
+
                     this.router.navigate(['/home'])
                     this.onReset_login_login()
                 } else {

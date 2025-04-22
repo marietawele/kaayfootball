@@ -31,10 +31,19 @@
             ],
             "styles": [
               "src/styles.scss",
+              "public/vendor/bootstrap/css/bootstrap.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.js"]
+            "scripts": ["node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "public/vendor/bootstrap/js/bootstrap.min.js",
+              "public/js/config.js",
+              "public/js/main.js",
+              "public/vendor/js/menu.js",
+              "public/vendor/js/helpers.js",
+              "public/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"
+
+          ]
           },
           "configurations": {
             "production": {
@@ -92,6 +101,7 @@
               }
             ],
             "styles": [
+                     "css/core.css",
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
@@ -101,5 +111,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "2983df5f-c81d-4787-ac5d-60f323ae1abc"
   }
 }

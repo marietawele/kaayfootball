@@ -1,37 +1,50 @@
 <!-- entete -->
-  <div class="d-flex align-items-center justify-content-between">
-    <div class="fs-1">Privilege  - {{les_privileges.length}}</div>
-    <div class="d-flex">
-      <button class="btn btn-primary" (click)="openModal_add_privilege()">Ajouter Privilege</button>
-    </div>
+<div class="d-flex align-items-center justify-content-between">
+  <div class="fs-1"><span (click)="api.go_back()"><i class="bi bi-chevron-left clique"></i></span>
+    <h2>Priviléges - {{ searchService.list.length }}</h2>
   </div>
-  <!-- Liste des éléments -->
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">id_privilege</th>
-<th scope="col">libelle_privilege</th>
-<th scope="col">description</th>
-<th scope="col">etat</th>
-<th scope="col">created_at</th>
-<th scope="col">updated_at</th><th scope="col">actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (one_privilege of les_privileges; track one_privilege) {
-          <tr>
-            <td>{{one_privilege.id_privilege}}</td>
-<td>{{one_privilege.libelle_privilege}}</td>
-<td>{{one_privilege.description}}</td>
-<td>{{one_privilege.etat}}</td>
-<td>{{one_privilege.created_at}}</td>
-<td>{{one_privilege.updated_at}}</td><td>
-    <i style="cursor: pointer;" class="bi bi-pencil-square me-2" (click)="openModal_edit_privilege(one_privilege)"></i>
-    <i style="cursor: pointer;" class="bi bi-trash" (click)="delete_privilege(one_privilege)"></i>
-</td>
-          </tr>
-        }
-      </tbody>
-    </table>
+  <div class="d-flex">
+    <button class="btn btn-primary" (click)="openModal_add_privilege()">
+      <i class="bi bi-plus"></i> Privilége
+    </button>
   </div>
+</div>
+<!-- Liste des éléments -->
+<div class="table-responsive">
+  <table class="table table">
+    <thead>
+      <tr>
+        <th scope="col">Ref</th>
+        <th scope="col">Libelle</th>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (one_privilege of searchService.list; track one_privilege) {
+      <tr>
+        <td>P° {{ one_privilege.id_privilege }}</td>
+        <td>{{ one_privilege.libelle }}</td>
+        <td>{{ one_privilege.description }}</td>
+        <!-- <td>{{ one_privilege.d }}</td> -->
+        <td>
+          <button class="btn btn-sm btn-warning me-2">
+            <i style="cursor: pointer" class="bi bi-pencil-square"
+              (click)="openModal_edit_privilege(one_privilege)"></i>
+          </button>
+          <button class="btn btn-sm btn-danger">
+            <i style="cursor: pointer" class="bi bi-trash" (click)="delete_privilege(one_privilege)"></i>
+          </button>
+        </td>
+      </tr>
+      }
+      <tr *ngIf="searchService.data<=0">
+        <td colspan="6" class="text-center m-2">
+          Aucune donnée
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>

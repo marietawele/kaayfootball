@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ApiService } from '../../../service/api/api.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+// declare function initialize(): any;
 declare function initialize(): any;
 
 @Component({
