@@ -1,51 +1,84 @@
 <!-- entete -->
-  <div class="d-flex align-items-center justify-content-between">
-    <div class="fs-1">Entreprise  - {{les_entreprises.length}}</div>
-    <div class="d-flex">
-      <button class="btn btn-primary" (click)="openModal_add_entreprise()">Ajouter Entreprise</button>
-    </div>
+<div class="d-flex align-items-center justify-content-between">
+  <div class="fs-1">
+     <h2>Entreprise- {{ searchService.list.length }}</h2> </div>
+  <div class="d-flex">
+    <button class="btn btn-primary" (click)="openModal_add_entreprise()">
+      Ajouter Entreprise
+    </button>
   </div>
-  <!-- Liste des éléments -->
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">id_entreprise</th>
-<th scope="col">libelle_entreprise</th>
-<th scope="col">adresse</th>
-<th scope="col">telephone</th>
-<th scope="col">email</th>
-<th scope="col">image</th>
-<th scope="col">site_web</th>
-<th scope="col">ninea</th>
-<th scope="col">registre_de_commerce</th>
-<th scope="col">pays</th>
-<th scope="col">created_at</th>
-<th scope="col">updated_at</th>
-<th scope="col">etat</th><th scope="col">actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (one_entreprise of les_entreprises; track one_entreprise) {
+</div>
+<!-- Liste des éléments -->
+<div class="card shadow-sm border-0 w-100">
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table table-hover mb-0">
+        <thead class="bg-light">
           <tr>
-            <td>{{one_entreprise.id_entreprise}}</td>
-<td>{{one_entreprise.libelle_entreprise}}</td>
-<td>{{one_entreprise.adresse}}</td>
-<td>{{one_entreprise.telephone}}</td>
-<td>{{one_entreprise.email}}</td>
-<td>{{one_entreprise.image}}</td>
-<td>{{one_entreprise.site_web}}</td>
-<td>{{one_entreprise.ninea}}</td>
-<td>{{one_entreprise.registre_de_commerce}}</td>
-<td>{{one_entreprise.pays}}</td>
-<td>{{one_entreprise.created_at}}</td>
-<td>{{one_entreprise.updated_at}}</td>
-<td>{{one_entreprise.etat}}</td><td>
-    <i style="cursor: pointer;" class="bi bi-pencil-square me-2" (click)="openModal_edit_entreprise(one_entreprise)"></i>
-    <i style="cursor: pointer;" class="bi bi-trash" (click)="delete_entreprise(one_entreprise)"></i>
-</td>
+            <th scope="col">id_entreprise</th>
+            <th scope="col">libelle_entreprise</th>
+            <!-- <th class="py-3">etat</th> -->
+            <th class="py-3 text-end pe-4">Actions</th>
           </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+        </thead>
+
+        <!-- <th scope="col">adresse</th>
+        <th scope="col">telephone</th>
+        <th scope="col">email</th>
+        <th scope="col">image</th>
+        <th scope="col">site_web</th>
+        <th scope="col">ninea</th>
+        <th scope="col">registre_de_commerce</th>
+        <th scope="col">pays</th>
+        <th scope="col">created_at</th>
+        <th scope="col">updated_at</th>
+        <th scope="col">etat</th> -->
+        <!-- <th scope="col">actions</th>
+      </tr>
+    </thead> -->
+    <tbody>
+      @for (one_entreprise of searchService.list; track one_entreprise) {
+      <tr>
+        <td class="ps-4 align-middle">
+          <div>
+            <h5 class="mb-1 fw-semibold">{{ one_entreprise.libelle_entreprise }}</h5>
+            <small class="text-muted">
+              {{ one_entreprise.telephone }} • {{ one_entreprise.adresse }} • {{ one_entreprise.email }}
+            </small>
+          </div>
+          <!-- {{ one_entreprise.id_entreprise }} -->
+        </td>
+        <td>
+          <span class="badge bg-primary-subtle text-primary rounded-pill">
+            {{ one_entreprise.pays  }}
+          </span>
+          <!-- {{ one_entreprise.libelle_entreprise }} -->
+        </td>
+        <!-- <td>{{ one_entreprise.adresse }}</td>
+        <td>{{ one_entreprise.telephone }}</td>
+        <td>{{ one_entreprise.email }}</td>
+        <td>{{ one_entreprise.image }}</td>
+        <td>{{ one_entreprise.site_web }}</td>
+        <td>{{ one_entreprise.ninea }}</td>
+        <td>{{ one_entreprise.registre_de_commerce }}</td>
+        <td>{{ one_entreprise.pays }}</td>
+        <td>{{ one_entreprise.created_at }}</td>
+        <td>{{ one_entreprise.updated_at }}</td>
+        <td>{{ one_entreprise.etat }}</td> -->
+        <td>
+          <button class="btn btn-outline-primary btn-sm" (click)="openModal_edit_entreprise(one_entreprise)">
+            <i class="bi bi-pencil me-1"></i> Modifier
+          </button>
+          <!-- <button class="btn btn-sm ms-1"
+           [ngClass]="{'btn-outline-danger': one_entreprise.etat == 'Actif'|| one_entreprise.etat == 'actif',
+            'btn-outline-sencondary':one_entreprise.etat == 'Inactif' || one_entreprise.etat == 'inactif'}"
+            (click)="delete_entreprise(one_entreprise)">
+            <!-- <i [ngClass]="{'bi bi-trash': one_entreprise.etat == 'Actif'|| one_entreprise.etat == 'actif',
+            'bi bi-save':one_entreprise.etat == 'Inactif' || one_entreprise.etat == 'inactif'}"></i> -->
+
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

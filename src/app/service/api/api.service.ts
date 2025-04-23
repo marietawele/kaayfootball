@@ -31,7 +31,7 @@ export class ApiService {
         {
           name: "Terrain",
           path: "/home/terrain",
-          icon: "bi bi-document-text",
+          icon: "bi bi-border",
           children: [],
           les_actions: [
             { menu: "Terrain", ongle: "Terrain", id: "list_Terrain", action: "Lister les Terrains" },
@@ -44,7 +44,7 @@ export class ApiService {
         {
           name: "Reservation",
           path: "/home/reservation",
-          icon: "bi bi-document-text",
+          icon: "bi bi-bell",
           children: [],
           les_actions: [
             { menu: "Reservation", ongle: "Reservation", id: "list_Reservation", action: "Lister les Reservations" },
@@ -57,7 +57,7 @@ export class ApiService {
         {
           name: "Abonnement",
           path: "/home/abonnement",
-          icon: "bi bi-document-text",
+          icon: "bi bi-person-vcard-fill",
           children: [],
           les_actions: [
             { menu: "Abonnement", ongle: "Abonnement", id: "list_Abonnement", action: "Lister les Abonnements" },

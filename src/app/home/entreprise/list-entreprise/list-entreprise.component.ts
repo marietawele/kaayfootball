@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
   import { AddEntrepriseComponent } from '../add-entreprise/add-entreprise.component';
   import { EditEntrepriseComponent } from '../edit-entreprise/edit-entreprise.component';
   import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SearchServiceService } from '../../../service/searchService/search-service.service';
   @Component({
     selector: 'app-list-entreprise',
     standalone: true, // Composant autonome
@@ -16,8 +17,8 @@ import { Component } from '@angular/core';
     selected_entreprise: any = undefined
     entreprise_to_edit: any = undefined
     loading_delete_entreprise = false
-    constructor(public api: ApiService,private modalService: NgbModal) {
-  
+    constructor(public api: ApiService,public searchService : SearchServiceService,  private modalService: NgbModal) {
+
     }
     ngOnInit(): void {
       this.get_entreprise()
@@ -27,6 +28,8 @@ import { Component } from '@angular/core';
       this.api.taf_post("entreprise/get", {}, (reponse: any) => {
         if (reponse.status) {
           this.les_entreprises = reponse.data
+          this.searchService.data = this.les_entreprises
+        this.searchService.filter_change()
           console.log("Opération effectuée avec succés sur la table entreprise. Réponse= ", reponse);
         } else {
           console.log("L'opération sur la table entreprise a échoué. Réponse= ", reponse);
@@ -37,7 +40,7 @@ import { Component } from '@angular/core';
         this.loading_get_entreprise = false;
       })
     }
-  
+
     voir_plus(one_entreprise: any) {
       this.selected_entreprise = one_entreprise
     }

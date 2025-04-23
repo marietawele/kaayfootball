@@ -10,6 +10,7 @@ import { ListTypeAbonnementComponent } from './type-abonnement/list-type-abonnem
 import { ListTypeReservationComponent } from './type-reservation/list-type-reservation/list-type-reservation.component';
 import { ListUtilisateurComponent } from './utilisateur/list-utilisateur/list-utilisateur.component';
 import { ListUtilisateurEntrepriseComponent } from './utilisateur-entreprise/list-utilisateur-entreprise/list-utilisateur-entreprise.component';
+import { ProfilComponent } from './profil/profil.component';
 
 const routes: Routes = [
   {path:"",component:ListAbonnementComponent},
@@ -22,7 +23,9 @@ const routes: Routes = [
 {path:"type_abonnement",component:ListTypeAbonnementComponent},
 {path:"type_reservation",component:ListTypeReservationComponent},
 {path:"utilisateur",component:ListUtilisateurComponent},
-{path:"utilisateur_entreprise",component:ListUtilisateurEntrepriseComponent}
+{path:"profil",component: ProfilComponent},
+{path:"utilisateur_entreprise",component:ListUtilisateurEntrepriseComponent},
+{ path: "", pathMatch: "full", redirectTo: "terrain" },
 ];
 
 @NgModule({

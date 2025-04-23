@@ -60,10 +60,10 @@ export class ListUtilisateurComponent {
   }
   delete_utilisateur(utilisateur: any) {
     let etat: any
-    if (utilisateur.statut == "Actif") {
-      etat = "Inactif"
+    if (utilisateur.statut == "actif") {
+      etat = "inactif"
     } else {
-      etat = "Actif"
+      etat = "actif"
 
     }
     this.loading_delete_utilisateur = true;

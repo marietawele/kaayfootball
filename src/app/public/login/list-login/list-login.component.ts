@@ -52,9 +52,9 @@ export class ListLoginComponent {
             if (reponse.status) {
                 console.log("Opération effectuée avec succés sur la table login. Réponse= ", reponse);
 
-                if (reponse.utilisateur.etat == "actif") {
+                if (reponse) {
                     await this.api.save_on_local_storage("token", reponse.data)
-                    this.api.Swal_success("Opération éffectuée avec succés")
+                    // this.api.Swal_success("Opération éffectuée avec succés")
 
                     this.router.navigate(['/home'])
                     this.onReset_login_login()

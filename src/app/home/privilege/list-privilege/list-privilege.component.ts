@@ -16,7 +16,7 @@ export class ListPrivilegeComponent {
   loading_get_privilege = false
   les_privileges: any[] = []
   selected_privilege: any = undefined
-  privilege_to_edit: any = undefined
+  privilege_to_edit: any =   undefined
   loading_delete_privilege = false
   constructor(public api: ApiService, private modalService: NgbModal, private loc:Location,public searchService: SearchServiceService) {
 

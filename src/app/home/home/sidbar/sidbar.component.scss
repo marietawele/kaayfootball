@@ -8,7 +8,17 @@ aside {
   max-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
+  background-color: rgb(133, 241, 133);
 }
+// .bg-menu-theme {
+//   background-color: rgb(197, 248, 197);
+//   color: #000;
+//   padding: 10px;
+//   font-size: 18px;
+//   font-weight: bold;
+//   text-align: center;
+// }
+
 // .dropdown-content{
 //   display: none;
 //   list-style: none;
@@ -34,3 +44,32 @@ aside {
 //   margin-left: 260px;
 //   padding: 20px;
 // }
+
+aside {
+  // background-color: #1a1a2e; // Replace with your logo's primary color
+  color: #ffffff; // Adjust text color for contrast
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+aside a {
+  color: #e94560; // Replace with an accent color from your logo
+  text-decoration: none;
+  font-weight: bold;
+}
+
+aside a:hover {
+  color:  rgb(197, 248, 197); // Replace with another complementary color
+  text-decoration: underline;
+}
+
+aside .menu-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+aside .menu-item:hover {
+  background-color: #16213e; // Replace with a darker shade of your logo's primary color
+}
