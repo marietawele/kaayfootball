@@ -15,9 +15,11 @@
       <table class="table table-hover mb-0">
         <thead class="bg-light">
           <tr>
-            <th scope="col">id_entreprise</th>
-            <th scope="col">libelle_entreprise</th>
-            <!-- <th class="py-3">etat</th> -->
+            <th scope="col">Entreprise</th>
+            <th scope="col">Pays</th>
+            <!-- <th class="py-3">Region</th>
+            <th class="py-3">Ville</th> -->
+            <th class="py-3">Adresse</th>
             <th class="py-3 text-end pe-4">Actions</th>
           </tr>
         </thead>
@@ -54,10 +56,11 @@
           </span>
           <!-- {{ one_entreprise.libelle_entreprise }} -->
         </td>
-        <!-- <td>{{ one_entreprise.adresse }}</td>
-        <td>{{ one_entreprise.telephone }}</td>
-        <td>{{ one_entreprise.email }}</td>
-        <td>{{ one_entreprise.image }}</td>
+         <!-- <td></td>
+        <td></td> -->
+
+        <td>{{ one_entreprise.adresse }}</td>
+       <!-- <td>{{ one_entreprise.image }}</td>
         <td>{{ one_entreprise.site_web }}</td>
         <td>{{ one_entreprise.ninea }}</td>
         <td>{{ one_entreprise.registre_de_commerce }}</td>
@@ -65,14 +68,14 @@
         <td>{{ one_entreprise.created_at }}</td>
         <td>{{ one_entreprise.updated_at }}</td>
         <td>{{ one_entreprise.etat }}</td> -->
-        <td>
+        <td class="text-end pe-4 align-middle">
           <button class="btn btn-outline-primary btn-sm" (click)="openModal_edit_entreprise(one_entreprise)">
             <i class="bi bi-pencil me-1"></i> Modifier
           </button>
-          <!-- <button class="btn btn-sm ms-1"
+         <!-- <button class="btn btn-sm ms-1"
            [ngClass]="{'btn-outline-danger': one_entreprise.etat == 'Actif'|| one_entreprise.etat == 'actif',
             'btn-outline-sencondary':one_entreprise.etat == 'Inactif' || one_entreprise.etat == 'inactif'}"
-            (click)="delete_entreprise(one_entreprise)">
+            (click)="delete_entreprise(one_entreprise)"> -->
             <!-- <i [ngClass]="{'bi bi-trash': one_entreprise.etat == 'Actif'|| one_entreprise.etat == 'actif',
             'bi bi-save':one_entreprise.etat == 'Inactif' || one_entreprise.etat == 'inactif'}"></i> -->
 
