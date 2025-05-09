@@ -42,7 +42,7 @@ export class AddAbonnementComponent {
       libelle_abonnement: ['', Validators.required],
       date_debut: ['', Validators.required],
       date_fin: ['', Validators.required],
-      etat: ["", Validators.required],
+      // etat: ["", Validators.required],
       // updated_at: ["", Validators.required],
       reduction: [''],
     });
@@ -126,7 +126,6 @@ export class AddAbonnementComponent {
     );
   }
 
-
   //Add reservations
   // openModal_add_type_reservation() {
   //       let options: any = {
@@ -145,20 +144,22 @@ export class AddAbonnementComponent {
   //         }
   //       })
   //     }
-   openModal_add_type_abonnement() {
-        let options: any = {
-          centered: true,
-          scrollable: true,
-          size: "lg"//'sm' | 'lg' | 'xl' | string
-        }
-        const modalRef = this.modalService.open(AddTypeAbonnementComponent, { ...options, backdrop: 'static' })
-        modalRef.result.then((result: any) => {
-          console.log('Modal closed with:', result);
-          if (result?.status) {
-            this.get_details_add_abonnement_form();
-          } else {
-
-          }
-        })
+  openModal_add_type_abonnement() {
+    let options: any = {
+      centered: true,
+      scrollable: true,
+      size: 'lg', //'sm' | 'lg' | 'xl' | string
+    };
+    const modalRef = this.modalService.open(AddTypeAbonnementComponent, {
+      ...options,
+      backdrop: 'static',
+    });
+    modalRef.result.then((result: any) => {
+      console.log('Modal closed with:', result);
+      if (result?.status) {
+        this.get_details_add_abonnement_form();
+      } else {
       }
+    });
+  }
 }
