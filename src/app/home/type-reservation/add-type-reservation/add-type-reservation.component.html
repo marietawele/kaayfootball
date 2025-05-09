@@ -1,103 +1,77 @@
 <div class="modal-header" data-bs-theme="ligth">
-      <h1 class="modal-title fs-5">Ajouter type_reservation</h1>
-      <button type="button" class="btn-close" aria-label ="Close" (click)="activeModal.close()"></button>
+  <h1 class="modal-title fs-5">Ty Reservation</h1>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.close()"
+  ></button>
+</div>
+<div class="modal-body">
+  <form
+    [formGroup]="reactiveForm_add_type_reservation"
+    (ngSubmit)="onSubmit_add_type_reservation()"
+    #form_add_type_reservation="ngForm"
+    class="row"
+  >
+    <!-- Champ Libelle Type Reservation -->
+    <div class="form-group col-sm-6">
+      <label class="mb-2">Libelle <span class="text-danger">*</span></label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="libelle_type_reservation"
+        placeholder="Libelle Type Reservation"
+        [ngClass]="{
+          'is-invalid': submitted && f.libelle_type_reservation.errors
+        }"
+      />
+      @if (submitted && f.libelle_type_reservation.errors) {
+      <div class="invalid-feedback">
+        @if (f.libelle_type_reservation.errors.required) {
+        <div>Ce champ est obligatoire</div>
+        }
+      </div>
+      }
     </div>
-    <div class="modal-body">
-      <form [formGroup]="reactiveForm_add_type_reservation" 
-            (ngSubmit)="onSubmit_add_type_reservation()" 
-            #form_add_type_reservation="ngForm" 
-            class="row">
-        
-            <!-- Champ Libelle Type Reservation -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Libelle Type Reservation</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="libelle_type_reservation" 
-                     placeholder="Libelle Type Reservation"  
-                     [ngClass]="{ 'is-invalid': submitted && f.libelle_type_reservation.errors }"/>
-              @if (submitted && f.libelle_type_reservation.errors) {
-                <div class="invalid-feedback">
-                  @if (f.libelle_type_reservation.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
 
-            <!-- Champ Description -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Description</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="description" 
-                     placeholder="Description"  
-                     [ngClass]="{ 'is-invalid': submitted && f.description.errors }"/>
-              @if (submitted && f.description.errors) {
-                <div class="invalid-feedback">
-                  @if (f.description.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
-
-            <!-- Champ Etat -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Etat</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="etat" 
-                     placeholder="Etat"  
-                     [ngClass]="{ 'is-invalid': submitted && f.etat.errors }"/>
-              @if (submitted && f.etat.errors) {
-                <div class="invalid-feedback">
-                  @if (f.etat.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
-
-            <!-- Champ Created At -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Created At</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="created_at" 
-                     placeholder="Created At"  
-                     [ngClass]="{ 'is-invalid': submitted && f.created_at.errors }"/>
-              @if (submitted && f.created_at.errors) {
-                <div class="invalid-feedback">
-                  @if (f.created_at.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
-
-            <!-- Champ Updated At -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Updated At</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="updated_at" 
-                     placeholder="Updated At"  
-                     [ngClass]="{ 'is-invalid': submitted && f.updated_at.errors }"/>
-              @if (submitted && f.updated_at.errors) {
-                <div class="invalid-feedback">
-                  @if (f.updated_at.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
-      </form>
+    <!-- Champ Description -->
+    <div class="form-group col-sm-6">
+      <label class="mb-2">Description</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="description"
+        placeholder="Description"
+        [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+      />
+      @if (submitted && f.description.errors) {
+      <div class="invalid-feedback">
+        @if (f.description.errors.required) {
+        <div>Ce champ est obligatoire</div>
+        }
+      </div>
+      }
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-primary m-2" [disabled]="loading_add_type_reservation || loading_get_details_add_type_reservation_form"
-      (click)="form_add_type_reservation.ngSubmit.emit()">
-      {{ loading_add_type_reservation ? "En cours ..." : "Valider" }}
-      </button>
-      <button type="button" class="btn btn-outline-danger" (click)="activeModal.close()">Fermer</button>
-    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-primary m-2"
+    [disabled]="
+      loading_add_type_reservation ||
+      loading_get_details_add_type_reservation_form
+    "
+    (click)="form_add_type_reservation.ngSubmit.emit()"
+  >
+    {{ loading_add_type_reservation ? "En cours ..." : "Valider" }}
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-danger"
+    (click)="activeModal.close()"
+  >
+    Fermer
+  </button>
+</div>

@@ -25,10 +25,9 @@ export class AddTypeAbonnementComponent {
   }
   init_form() {
       this.reactiveForm_add_type_abonnement  = this.formBuilder.group({
-          libelle_type_abonnement: [""],
-description: [""],
-etat: ["", Validators.required],
-updated_at: ["", Validators.required]
+          libelle_type_abonnement: ["", Validators.required],
+          description: [""],
+
       });
   }
 
@@ -67,7 +66,7 @@ updated_at: ["", Validators.required]
         this.loading_add_type_abonnement = false;
     })
   }
-  
+
   get_details_add_type_abonnement_form() {
       this.loading_get_details_add_type_abonnement_form = true;
       this.api.taf_post("type_abonnement/get_form_details", {}, (reponse: any) => {

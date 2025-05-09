@@ -7,10 +7,13 @@
 html,
 body {
   height: 100%;
-  background-color: #e8eeec;
+  background-color: white;
   --bs-body-font-family: 'Poppins', sans-serif !important
 }
-
+button.btn.btn-primary {
+  background-color: #e94560 !important;
+  border-color: #e94560 !important;
+}
 body {
   margin: 0;
 }

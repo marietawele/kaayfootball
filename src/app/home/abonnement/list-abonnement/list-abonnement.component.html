@@ -1,47 +1,54 @@
-<!-- entete -->
-  <div class="d-flex align-items-center justify-content-between">
-    <div class="fs-1">Abonnement  - {{les_abonnements.length}}</div>
-    <div class="d-flex">
-      <button class="btn btn-primary" (click)="openModal_add_abonnement()">Ajouter Abonnement</button>
+<!-- En-tête -->
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <div>
+    <h2 class="fw-bold mb-0">📋 Abonnements <small class="text-muted">({{ searchService.list.length }})</small></h2>
+  </div>
+  <div>
+    <button class="btn btn-primary" (click)="openModal_add_abonnement()">
+      <i class="bi bi-person-plus me-1"></i> Abonnement
+    </button>
+  </div>
+</div>
+
+<!-- Liste des abonnements -->
+<div class="card shadow-sm border-0 w-100">
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table table-striped align-middle mb-0">
+        <thead class="table-light">
+          <tr>
+            <th>Abonnement</th>
+            <th class="text-nowrap">Période</th>
+            <th>Réduction</th>
+            <th class="text-end pe-4">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (one_abonnement of searchService.list; track one_abonnement) {
+          <tr>
+            <td>
+              <span class="fw-semibold">{{ one_abonnement.libelle_abonnement }}</span>
+            </td>
+            <td class="text-nowrap">
+              <small class="text-muted">
+                {{ one_abonnement.date_debut | date:'EEEE d MMMM yyyy' }} → {{ one_abonnement.date_fin | date:'EEEE d MMMM yyyy' }}
+              </small>
+            </td>
+            <td>
+              <span class="badge bg-success">{{ one_abonnement.reduction }}%</span>
+            </td>
+            <td class="text-end pe-4">
+              <button class="btn btn-sm btn-outline-primary me-2" (click)="openModal_edit_abonnement(one_abonnement)">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button class="btn btn-sm btn-outline-danger" (click)="delete_abonnement(one_abonnement)">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
     </div>
   </div>
-  <!-- Liste des éléments -->
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">id_abonnement</th>
-<th scope="col">id_entreprise</th>
-<th scope="col">id_utilisateur</th>
-<th scope="col">id_type_abonnement</th>
-<th scope="col">libelle_abonnement</th>
-<th scope="col">date_debut</th>
-<th scope="col">date_fin</th>
-<th scope="col">etat</th>
-<th scope="col">created_at</th>
-<th scope="col">updated_at</th>
-<th scope="col">reduction</th><th scope="col">actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (one_abonnement of les_abonnements; track one_abonnement) {
-          <tr>
-            <td>{{one_abonnement.id_abonnement}}</td>
-<td>{{one_abonnement.id_entreprise}}</td>
-<td>{{one_abonnement.id_utilisateur}}</td>
-<td>{{one_abonnement.id_type_abonnement}}</td>
-<td>{{one_abonnement.libelle_abonnement}}</td>
-<td>{{one_abonnement.date_debut}}</td>
-<td>{{one_abonnement.date_fin}}</td>
-<td>{{one_abonnement.etat}}</td>
-<td>{{one_abonnement.created_at}}</td>
-<td>{{one_abonnement.updated_at}}</td>
-<td>{{one_abonnement.reduction}}</td><td>
-    <i style="cursor: pointer;" class="bi bi-pencil-square me-2" (click)="openModal_edit_abonnement(one_abonnement)"></i>
-    <i style="cursor: pointer;" class="bi bi-trash" (click)="delete_abonnement(one_abonnement)"></i>
-</td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+</div>

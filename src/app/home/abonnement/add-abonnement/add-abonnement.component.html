@@ -1,69 +1,28 @@
 <div class="modal-header" data-bs-theme="ligth">
-      <h1 class="modal-title fs-5">Ajouter abonnement</h1>
+      <h1 class="modal-title fs-5">Abonnement</h1>
+      <div class="d-flex ms-5">
+        <button class="btn btn-primary" (click)="openModal_add_type_abonnement()"><i class="bi bi-calendar-plus-fill"></i>  Type Abonnements</button>
+      </div>
       <button type="button" class="btn-close" aria-label ="Close" (click)="activeModal.close()"></button>
     </div>
     <div class="modal-body">
-      <form [formGroup]="reactiveForm_add_abonnement" 
-            (ngSubmit)="onSubmit_add_abonnement()" 
-            #form_add_abonnement="ngForm" 
+      <form [formGroup]="reactiveForm_add_abonnement"
+            (ngSubmit)="onSubmit_add_abonnement()"
+            #form_add_abonnement="ngForm"
             class="row">
-        
-            <!-- Champ Id Entreprise (Clé étrangère vers entreprise) -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Entreprise</label >
-              <select [ngClass]="{ 'is-invalid': submitted && f.id_entreprise.errors }" 
-                      class="form-select" 
-                      formControlName="id_entreprise">
-                <option value="">Sélectionnez un(e) Entreprise</option>
-                @for (one_entreprise of form_details?.les_entreprises; track $index) {
-                  <option [value]="one_entreprise.id_entreprise">
-                    {{ "N°" + one_entreprise.id_entreprise }}
-                  </option>
-                } 
-              </select>
-              @if (submitted && f.id_entreprise.errors) {
-                <div class="invalid-feedback">
-                  @if (f.id_entreprise.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
-
-            <!-- Champ Id Utilisateur (Clé étrangère vers utilisateur) -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Utilisateur</label >
-              <select [ngClass]="{ 'is-invalid': submitted && f.id_utilisateur.errors }" 
-                      class="form-select" 
-                      formControlName="id_utilisateur">
-                <option value="">Sélectionnez un(e) Utilisateur</option>
-                @for (one_utilisateur of form_details?.les_utilisateurs; track $index) {
-                  <option [value]="one_utilisateur.id_utilisateur">
-                    {{ "N°" + one_utilisateur.id_utilisateur }}
-                  </option>
-                } 
-              </select>
-              @if (submitted && f.id_utilisateur.errors) {
-                <div class="invalid-feedback">
-                  @if (f.id_utilisateur.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
 
             <!-- Champ Id Type Abonnement (Clé étrangère vers type_abonnement) -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Type Abonnement</label >
-              <select [ngClass]="{ 'is-invalid': submitted && f.id_type_abonnement.errors }" 
-                      class="form-select" 
+            <div class="form-group col-sm-12 col-md-6 mb-4">
+              <label class="mb-2" >Type Abonnement <span class="text-danger">*</span></label >
+              <select [ngClass]="{ 'is-invalid': submitted && f.id_type_abonnement.errors }"
+                      class="form-select"
                       formControlName="id_type_abonnement">
                 <option value="">Sélectionnez un(e) Type Abonnement</option>
                 @for (one_type_abonnement of form_details?.les_type_abonnements; track $index) {
                   <option [value]="one_type_abonnement.id_type_abonnement">
-                    {{ "N°" + one_type_abonnement.id_type_abonnement }}
+                    {{one_type_abonnement.libelle_type_abonnement }}
                   </option>
-                } 
+                }
               </select>
               @if (submitted && f.id_type_abonnement.errors) {
                 <div class="invalid-feedback">
@@ -75,12 +34,12 @@
             </div>
 
             <!-- Champ Libelle Abonnement -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Libelle Abonnement</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="libelle_abonnement" 
-                     placeholder="Libelle Abonnement"  
+            <div class="form-group col-sm-12 col-md-6 mb-4">
+              <label class="mb-2" >Libelle Abonnement <span class="text-danger">*</span></label >
+              <input class="form-control"
+                     type="text"
+                     formControlName="libelle_abonnement"
+                     placeholder="Libelle Abonnement"
                      [ngClass]="{ 'is-invalid': submitted && f.libelle_abonnement.errors }"/>
               @if (submitted && f.libelle_abonnement.errors) {
                 <div class="invalid-feedback">
@@ -92,12 +51,12 @@
             </div>
 
             <!-- Champ Date Debut -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Date Debut</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="date_debut" 
-                     placeholder="Date Debut"  
+            <div class="form-group col-sm-6 col-md-6 mb-4">
+              <label class="mb-2" >Date Debut <span class="text-danger">*</span></label >
+              <input class="form-control"
+                     type="date"
+                     formControlName="date_debut"
+                     placeholder="Date Debut"
                      [ngClass]="{ 'is-invalid': submitted && f.date_debut.errors }"/>
               @if (submitted && f.date_debut.errors) {
                 <div class="invalid-feedback">
@@ -109,12 +68,12 @@
             </div>
 
             <!-- Champ Date Fin -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Date Fin</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="date_fin" 
-                     placeholder="Date Fin"  
+            <div class="form-group col-sm-6 col-md-6 mb-4">
+              <label class="mb-2" >Date Fin <span class="text-danger">*</span></label >
+              <input class="form-control"
+                     type="date"
+                     formControlName="date_fin"
+                     placeholder="Date Fin"
                      [ngClass]="{ 'is-invalid': submitted && f.date_fin.errors }"/>
               @if (submitted && f.date_fin.errors) {
                 <div class="invalid-feedback">
@@ -125,13 +84,13 @@
               }
             </div>
 
-            <!-- Champ Etat -->
+            <!-- Champ Etat
             <div class="form-group col-sm-6">
               <label class="mb-2" >Etat</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="etat" 
-                     placeholder="Etat"  
+              <input class="form-control"
+                     type="text"
+                     formControlName="etat"
+                     placeholder="Etat"
                      [ngClass]="{ 'is-invalid': submitted && f.etat.errors }"/>
               @if (submitted && f.etat.errors) {
                 <div class="invalid-feedback">
@@ -140,49 +99,17 @@
                   }
                 </div>
               }
-            </div>
+            </div> -->
 
-            <!-- Champ Created At -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Created At</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="created_at" 
-                     placeholder="Created At"  
-                     [ngClass]="{ 'is-invalid': submitted && f.created_at.errors }"/>
-              @if (submitted && f.created_at.errors) {
-                <div class="invalid-feedback">
-                  @if (f.created_at.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
 
-            <!-- Champ Updated At -->
-            <div class="form-group col-sm-6">
-              <label class="mb-2" >Updated At</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="updated_at" 
-                     placeholder="Updated At"  
-                     [ngClass]="{ 'is-invalid': submitted && f.updated_at.errors }"/>
-              @if (submitted && f.updated_at.errors) {
-                <div class="invalid-feedback">
-                  @if (f.updated_at.errors.required) {
-                    <div>Ce champ est obligatoire</div>
-                  }
-                </div>
-              }
-            </div>
 
             <!-- Champ Reduction -->
-            <div class="form-group col-sm-6">
+            <div class="form-group col-sm-12 ">
               <label class="mb-2" >Reduction</label >
-              <input class="form-control" 
-                     type="text" 
-                     formControlName="reduction" 
-                     placeholder="Reduction"  
+              <input class="form-control"
+                     type="number"
+                     formControlName="reduction"
+                     placeholder="10 --%"
                      [ngClass]="{ 'is-invalid': submitted && f.reduction.errors }"/>
               @if (submitted && f.reduction.errors) {
                 <div class="invalid-feedback">
