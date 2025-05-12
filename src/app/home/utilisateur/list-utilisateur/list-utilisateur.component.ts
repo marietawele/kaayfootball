@@ -60,14 +60,14 @@ export class ListUtilisateurComponent {
   }
   delete_utilisateur(utilisateur: any) {
     let etat: any
-    if (utilisateur.statut == "actif") {
-      etat = "inactif"
+    if (utilisateur.statut == "Actif") {
+      etat = "Inactif"
     } else {
-      etat = "actif"
+      etat = "Actif"
 
     }
     this.loading_delete_utilisateur = true;
-    this.api.taf_post("utilisateur/edit", { condition: { id_utilisateur: utilisateur.id_utilisateur }, data: { statut: etat } }, (reponse: any) => {
+    this.api.taf_post("utilisateur/edit3", { condition: { id_utilisateur: utilisateur.id_utilisateur }, data: { statut: etat } }, (reponse: any) => {
       //when success
       if (reponse.status) {
         console.log("Opération effectuée avec succés sur la table utilisateur . Réponse = ", reponse)

@@ -7,9 +7,11 @@
     <button class="btn btn-outline-primary btn-sm px-3">
       <i class="bi bi-envelope me-1"></i> Inviter
     </button>
-    <button class="btn btn-outline-secondary" [routerLink]="['/home/privilege']"><i class="bi bi-shield-lock me-1"></i>
+    <button class="btn btn-outline-secondary" [routerLink]="['/home/privilege']"><i style="color:green"
+        class="bi bi-shield-lock me-1"></i>
       Gestion des privilèges</button>
-    <button class="btn btn-primary" (click)="openModal_add_utilisateur()"><i class="bi bi-person-plus me-1"></i>
+    <button class="btn btn-primary" (click)="openModal_add_utilisateur()">
+      <i class="bi bi-plus-circle me-1"></i>
       Utilisateur</button>
   </div>
 </div>
@@ -89,25 +91,25 @@
             </td>
             <td class="align-middle">
               <span class="badge bg-primary-subtle text-primary rounded-pill">
-                {{ one_utilisateur.libelle_privilege }}
+                {{ one_utilisateur.privilege }}
               </span>
             </td>
             <td class="align-middle">
               <span class="badge p-2" [ngClass]="{
-                'bg-success': one_utilisateur.etat == 'Actif'|| one_utilisateur.etat == 'actif',
-                'bg-danger': one_utilisateur.etat == 'Inactif' || one_utilisateur.etat == 'inactif'
-                }">{{ one_utilisateur.etat | titlecase}}
+                'bg-success': one_utilisateur.statut == 'Actif'|| one_utilisateur.statut == 'actif',
+                'bg-danger': one_utilisateur.statut == 'Inactif' || one_utilisateur.statut == 'inactif'
+                }">{{ one_utilisateur.statut | titlecase}}
               </span>
             </td>
             <td class="text-end pe-4 align-middle">
               <button class="btn btn-outline-primary btn-sm" (click)="openModal_edit_utilisateur(one_utilisateur)">
-                <i class="bi bi-pencil me-1"></i> Modifier
+                <i class="bi bi-pencil me-1"></i>
               </button>
-              <button class="btn btn-sm ms-1" [ngClass]="{'btn-outline-danger': one_utilisateur.etat == 'Actif'|| one_utilisateur.etat == 'actif',
-                'btn-outline-sencondary':one_utilisateur.etat == 'Inactif' || one_utilisateur.etat == 'inactif'}"
+              <button class="btn btn-sm ms-1" [ngClass]="{'btn-outline-danger': one_utilisateur.statut == 'Actif'|| one_utilisateur.statut == 'actif',
+                'btn-outline-sencondary':one_utilisateur.statut == 'Inactif' || one_utilisateur.statut == 'inactif'}"
                 (click)="delete_utilisateur(one_utilisateur)">
-                <i [ngClass]="{'bi bi-trash': one_utilisateur.etat == 'Actif'|| one_utilisateur.etat == 'actif',
-                'bi bi-save':one_utilisateur.etat == 'Inactif' || one_utilisateur.etat == 'inactif'}"></i>
+                <i [ngClass]="{'bi bi-trash': one_utilisateur.statut == 'Actif'|| one_utilisateur.statut == 'actif',
+                'bi bi-save':one_utilisateur.statut == 'Inactif' || one_utilisateur.statut == 'inactif'}"></i>
               </button>
             </td>
           </tr>
@@ -115,4 +117,11 @@
       </table>
     </div>
   </div>
+</div>
+<div class="row">
+  <ng-container class="no" *ngIf="searchService.data<=0">
+    <div class="col-md-12 mb-3 text-center mt-5">
+      <h3>Aucune donnée</h3>
+    </div>
+  </ng-container>
 </div>
