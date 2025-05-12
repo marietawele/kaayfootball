@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule, DatePipe } from '@angular/common';
   import { ApiService } from '../../../service/api/api.service';
   import { AddAbonnementComponent } from '../add-abonnement/add-abonnement.component';
   import { EditAbonnementComponent } from '../edit-abonnement/edit-abonnement.component';
   import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SearchServiceService } from '../../../service/searchService/search-service.service';
+import { RouterLink } from '@angular/router';
+
   @Component({
     selector: 'app-list-abonnement',
     standalone: true, // Composant autonome
-    imports: [AddAbonnementComponent,EditAbonnementComponent], // Dépendances importées
+    imports: [AddAbonnementComponent,EditAbonnementComponent,RouterLink,CommonModule], // Dépendances importées
     templateUrl: './list-abonnement.component.html',
     styleUrls: ['./list-abonnement.component.scss']
   })
@@ -16,8 +20,8 @@ import { Component } from '@angular/core';
     selected_abonnement: any = undefined
     abonnement_to_edit: any = undefined
     loading_delete_abonnement = false
-    constructor(public api: ApiService,private modalService: NgbModal) {
-  
+    constructor(public api: ApiService,public searchService: SearchServiceService,private modalService: NgbModal) {
+
     }
     ngOnInit(): void {
       this.get_abonnement()
@@ -27,6 +31,8 @@ import { Component } from '@angular/core';
       this.api.taf_post("abonnement/get", {}, (reponse: any) => {
         if (reponse.status) {
           this.les_abonnements = reponse.data
+          this.searchService.data = this.les_abonnements
+          this.searchService.filter_change()
           console.log("Opération effectuée avec succés sur la table abonnement. Réponse= ", reponse);
         } else {
           console.log("L'opération sur la table abonnement a échoué. Réponse= ", reponse);
@@ -37,7 +43,7 @@ import { Component } from '@angular/core';
         this.loading_get_abonnement = false;
       })
     }
-  
+
     voir_plus(one_abonnement: any) {
       this.selected_abonnement = one_abonnement
     }
@@ -49,7 +55,7 @@ import { Component } from '@angular/core';
     }
     delete_abonnement (abonnement : any){
       this.loading_delete_abonnement = true;
-      this.api.taf_post("abonnement/delete", abonnement,(reponse: any)=>{
+      this.api.taf_post("abonnement/delete", abonnement ,(reponse: any)=>{
         //when success
         if(reponse.status){
           console.log("Opération effectuée avec succés sur la table abonnement . Réponse = ",reponse)

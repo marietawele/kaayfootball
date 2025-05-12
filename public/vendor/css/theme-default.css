@@ -409,7 +409,7 @@ button.list-group-item-primary.active {
   color: #1c5145;
 }
 .navbar.bg-primary .navbar-text a:hover, .navbar.bg-primary .navbar-text a:focus {
-  color: #1c5145;
+  color: #0bdd86;
 }
 .navbar.bg-primary hr {
   border-color: rgba(255, 255, 255, 0.15);

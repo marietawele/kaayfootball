@@ -8,7 +8,12 @@ aside {
   max-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: rgb(133, 241, 133);
+  background-color: #e5e5f7;
+opacity: 0.8;
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 13px ), repeating-linear-gradient( #d3d7d255, #d3d7d2 );
+  // background-color: rgb(179, 179, 179);
+  // background-color: rgb(133, 241, 133);
+
 }
 // .bg-menu-theme {
 //   background-color: rgb(197, 248, 197);
@@ -59,7 +64,7 @@ aside a {
 }
 
 aside a:hover {
-  color:  rgb(21, 255, 21); // Replace with another complementary color
+  color: blue; // Replace with another complementary color
   text-decoration: underline;
 }
 
@@ -71,5 +76,5 @@ aside .menu-item {
 }
 
 aside .menu-item:hover {
-  background-color: #4d6197; // Replace with a darker shade of your logo's primary color
+  background-color: #e98898; // Replace with a darker shade of your logo's primary color
 }
